@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<main class="container">
+  <div class="page-card">
+    <h1>Katalog Buku Perpustakaan</h1>
+    <p class="subtitle">Daftar koleksi buku yang tersedia dalam perpustakaan digital kami.</p>
+
+    <div class="table-responsive">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Judul Buku</th>
+            <th>Kategori</th>
+            <th>Jumlah Stok</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% books.forEach(function(book) { %>
+            <tr>
+              <td>#<%= book.id %></td>
+              <td><strong><%= book.judul %></strong></td>
+              <td><span class="badge-category"><%= book.kategori %></span></td>
+              <td><span class="stock-count"><%= book.stok %> Eksemplar</span></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

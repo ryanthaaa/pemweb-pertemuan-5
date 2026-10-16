@@ -1,0 +1,30 @@
+<!-- Include Header -->
+<%- include('../partials/header.ejs', {pageTitle: 'Katalog Produk' }) %>
+
+    <div class="card">
+        <h1>Daftar Produk</h1>
+        <div class="items">
+            <div class="item">Monitor</div>
+            <div class="item">Keyboard</div>
+            <div class="item">Mouse</div>
+            <div class="item">Motherboard</div>
+            <div class="item">VGA Graphic Card</div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+        <h2>Form Tambah Produk</h2>
+
+        <!-- Formulir mengirim data melalui metode HTTP POST -->
+        <form action="/katalog/tambah" method="post">
+            <div style="margin-bottom: 1rem;">
+                <label for="namaProduk">Nama Produk:</label><br>
+                
+                <!-- Attribute 'naem' adalah kunci penting untuk dibaca di Back-End -->
+                <input type="text" name="namaProduk" id="namaProduk" required>
+            </div>
+            <button type="submit">Kirim Payload</button>
+        </form>
+    </div>
+
+<%- include('../partials/footer.ejs') %>
